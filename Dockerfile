@@ -1,21 +1,23 @@
 FROM sipeed/picoclaw:latest
 
-# Set host ke 0.0.0.0 agar bisa di-binding dari Docker host network
+# Reset ENTRYPOINT bawaan image agar tidak bentrok dengan CMD kita
+ENTRYPOINT []
+
+# Mengatur host agar listen di semua interface network
 ENV PICOCLAW_GATEWAY_HOST=0.0.0.0
 
-# Buat direktori config bawaan
+# Beberapa aplikasi Go/Node otomatis membaca port dari env PORT
+ENV PORT=3000
+
+# Sediakan folder config sesuai dokumentasi
 RUN mkdir -p /root/.picoclaw/ && mkdir -p /app/docker/data/
 
-# Salin konfigurasi ke lokasi yang dibaca aplikasi
+# Salin konfigurasi yang kamu buat ke lokasi aplikasi
 COPY config.json /root/.picoclaw/config.json
 COPY config.json /app/docker/data/config.json
 
-# --- PILIH SALAH SATU MODE DI BAWAH INI SEBAGAI CMD ---
+# Ekspos port 3000
+EXPOSE 3000
 
-# OPSI A: Jika ingin menjalankan Web Console / Launcher (Default port internal: 18800)
-EXPOSE 18800
+# Menjalankan launcher secara langsung tanpa menumpuk command gateway bawaan
 CMD ["picoclaw", "launcher", "--host", "0.0.0.0"]
-
-# OPSI B: Jika hanya ingin menjalankan Webhook Gateway (Gunakan ini jika Opsi A tidak ada)
-# EXPOSE 8080 
-# CMD ["picoclaw", "gateway", "--host", "0.0.0.0"]
