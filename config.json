@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "model_list": [
     {
       "model_name": "puru1",
@@ -23,10 +22,8 @@
   ],
   "agents": {
     "defaults": {
-      "model": {
-        "primary": "puru1",
-        "fallbacks": ["puru2", "puru3"]
-      },
+      "model_name": "puru1",
+      "model_fallbacks": ["puru2", "puru3"],
       "context_window": 131072,
       "summarize_token_percent": 75,
       "summarize_message_threshold": 20
