@@ -2,15 +2,28 @@
 {
   "model_list": [
     {
-      "model_name": "puru",
+      "model_name": "puru1",
       "model": "openai/puru",
       "api_keys": ["sk-00fa7c868847b760-fbkl9l-e4416500"],
       "api_base": "https://betatestervueui2-b.hf.space/v1"
+    },
+    {
+      "model_name": "puru2",
+      "model": "gemini/gemma-4-31b-it",
+      "api_keys": ["AIzaSyCL6KXbZDbJ5fBgI4BOrdhJbEDLnuzUL-Y"],
+      "rpm": 15
+    },
+    {
+      "model_name": "puru3",
+      "model": "gemini/gemma-4-26b-a4b-it",
+      "api_keys": ["AIzaSyCL6KXbZDbJ5fBgI4BOrdhJbEDLnuzUL-Y"],
+      "rpm": 15
     }
   ],
   "agents": {
     "defaults": {
-      "model_name": "puru"
+      "primary": "puru1",
+      "fallbacks":["puru2","puru3"]
     }
   },
   "channels": {
