@@ -1,4 +1,3 @@
-
 {
   "model_list": [
     {
@@ -24,14 +23,16 @@
   "agents": {
     "defaults": {
       "primary": "puru1",
-      "fallbacks":["puru2","puru3"]
+      "fallbacks":["puru2","puru3"],
+      "context_window": 131072,
+      "summarize_token_percent": 75,
+      "summarize_message_threshold": 20
     }
   },
   "channels": {
     "telegram": {
       "enabled": true,
       "token": "8535593654:AAEaEddzmyzVxkwWPy1l8JiHT7UfPZ-pOtA",
-      "webhook_url": "https://political-benoite-nue-api-482af90a.koyeb.app/webhooks/telegram",
       "allow_from": ["7004559855"]
     }
   }
