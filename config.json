@@ -18,7 +18,7 @@
       "enabled": true,
       "token": "8535593654:AAEaEddzmyzVxkwWPy1l8JiHT7UfPZ-pOtA",
       "webhook_url": "https://political-benoite-nue-api-482af90a.koyeb.app/webhooks/telegram",
-      "allow_from": ["*"]
+      "allow_from": ["7004559855"]
     }
   }
 }
