@@ -11,7 +11,7 @@
   "agents": {
     "defaults": {
       "model_name": "puru1",
-      "context_window": 131072,
+      "context_window": 30720,
       "summarize_token_percent": 75,
       "summarize_message_threshold": 20,
       "max_tool_iterations":50
