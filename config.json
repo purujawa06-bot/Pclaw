@@ -63,7 +63,7 @@
       "summarize_message_threshold": 20,
       "max_tool_iterations": 50
     }
-  ],
+  },
   "channels": {
     "telegram": {
       "enabled": true,
